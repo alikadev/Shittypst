@@ -1,0 +1,8 @@
+[package]
+name = "math"
+version = "0.2.0"
+entrypoint = "header.typ"
+description = "A really simple package to correctly format math courses. Created for my own usecase at school"
+authros = ["Kuci Elvin <elvin.kuci@hotmail.com>"]
+license = "MIT"
+

@@ -1,0 +1,8 @@
+[package]
+name = "heiafr"
+version = "1.0.0"
+entrypoint = "header.typ"
+description = "A really simple package to correctly format report at the HEIA-FR"
+authros = ["Kuci Elvin <elvin.kuci@hotmail.com>", "Supsik Jacques"]
+license = "MIT"
+
