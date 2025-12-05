@@ -137,6 +137,7 @@
 #let nt(level: none, ..content) = {
   // Capture content
   content = content.pos().rev()
+  if (level == none) {level = 0}
   assert(
     content.len() > 0,
     message: "Expected 1 or 2 positional argument like (body) or (title, body)"
@@ -244,6 +245,7 @@
 #let inf = symbol(sym.infinity)
 #let pm = symbol(sym.plus.minus)
 #let mp = symbol(sym.minus.plus)
+#let grad = symbol(sym.gradient)
 #let bigg(expr, size: 100%) = $lr(#expr|, size: #size)$
 
 /// ===== TESTING ===== ///
