@@ -22,7 +22,7 @@
   let lvl = if level != none {level} else {state("headingLevel").get()}
   text(
     fill: color,
-         if lvl == 0 {text(weight:"semibold", size:12pt, title)}
+         if lvl == 0 {text(weight:"semibold", size:8pt, title)}
     else if lvl == 1 [= #title]
     else if lvl == 2 [== #title]
     else if lvl == 3 [=== #title]
@@ -81,7 +81,7 @@
   content               ///< The content
 ) = {
   if titleFill == none { titleFill = stroke }
-  if title != none { v(0.5mm) }
+  if title != none { v(2mm) }
   box(
     width: 100%,
     radius: radius,
@@ -190,7 +190,7 @@
     message: "Expected 1 or 2 positional argument like (body) or (title, body)"
   )
   let body = content.at(0)
-  let title = content.at(1, default: "Def:")
+  let title = content.at(1, default: "Ex:")
   // Draw the block
   block(
     level: level,
