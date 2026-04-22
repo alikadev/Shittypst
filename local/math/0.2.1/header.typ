@@ -250,6 +250,10 @@
 #let grad = symbol(sym.gradient)
 #let bigg(expr, size: 100%) = $lr(#expr|, size: #size)$
 
+#let sesac(..arr, spacing: 6pt) = {
+  box($ lr(#stack(dir: ttb, spacing: spacing, ..arr.pos().map(item => align(left, $ #item $))) }) $, )
+}
+
 /// ===== TESTING ===== ///
 #if false [
   #set heading(numbering: "1.1.1.")

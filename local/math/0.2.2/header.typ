@@ -9,6 +9,14 @@
   context state("headingLevel").update(level)
 }
 
+#let crop(img, top:0cm, bottom:0cm, left:0cm, right:0cm) = {
+  box(
+    img,
+    clip:true,
+    inset:(top:-top,bottom:-bottom,left:-left,right:-right)
+  )
+}
+
 /// @return true if v is boolean
 #let _isBool(v) = { v == true or v == false }
 
@@ -249,6 +257,10 @@
 #let mp = symbol(sym.minus.plus)
 #let grad = symbol(sym.gradient)
 #let bigg(expr, size: 100%) = $lr(#expr|, size: #size)$
+
+#let sesac(..arr, spacing: 6pt) = {
+  box($ lr(#stack(dir: ttb, spacing: spacing, ..arr.pos().map(item => align(left, $ #item $))) }) $, )
+}
 
 /// ===== TESTING ===== ///
 #if false [

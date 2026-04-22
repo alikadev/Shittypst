@@ -9,6 +9,18 @@
   context state("headingLevel").update(level)
 }
 
+#let resetHeadingTo(value) = {
+  counter(heading).update(value)
+}
+
+#let crop(img, top:0cm, bottom:0cm, left:0cm, right:0cm) = {
+  box(
+    img,
+    clip:true,
+    inset:(top:-top,bottom:-bottom,left:-left,right:-right)
+  )
+}
+
 /// @return true if v is boolean
 #let _isBool(v) = { v == true or v == false }
 
@@ -66,7 +78,7 @@
   align(center)[ #text(24pt, weight: "bold")[#name] ]
   line(length:100%)
   if resetHeading == true {
-    counter(heading).update(0)
+    resetHeadingTo(0)
   }
 }
 
@@ -248,7 +260,12 @@
 #let pm = symbol(sym.plus.minus)
 #let mp = symbol(sym.minus.plus)
 #let grad = symbol(sym.gradient)
+#let eps = symbol(sym.epsilon)
 #let bigg(expr, size: 100%) = $lr(#expr|, size: #size)$
+
+#let sesac(..arr, spacing: 6pt) = {
+  box($ lr(#stack(dir: ttb, spacing: spacing, ..arr.pos().map(item => align(left, $ #item $))) }) $, )
+}
 
 /// ===== TESTING ===== ///
 #if false [
