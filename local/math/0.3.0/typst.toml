@@ -1,0 +1,8 @@
+[package]
+name = "math"
+version = "0.3.0"
+entrypoint = "header.typ"
+description = "A simple set of functions for document rendering."
+authros = ["Kuci Elvin <elvin.kuci@hotmail.com>"]
+license = "MIT"
+
